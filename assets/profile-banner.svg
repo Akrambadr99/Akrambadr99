@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="390" viewBox="0 0 1280 390" role="img" aria-labelledby="title desc">
+<title id="title">Akram Badr — Thoughtful interfaces. Reliable workflows.</title>
+<desc id="desc">Software projects spanning team operations, maintenance, and robotics simulation.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1729"/><stop offset="1" stop-color="#17394a"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#9ec8d6" stroke-opacity=".06"/></pattern></defs>
+<rect width="1280" height="390" rx="22" fill="url(#bg)"/><rect width="1280" height="390" rx="22" fill="url(#grid)"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<rect x="58" y="51" width="40" height="40" rx="11" fill="#a0f1d1"/><text x="65" y="78" fill="#0e2935" font-size="20" font-weight="700">AB</text>
+<text x="113" y="78" fill="#a0f1d1" font-size="14" font-weight="600" letter-spacing="2.5">AKRAM BADR</text>
+<text x="55" y="173" fill="#f1f7fd" font-size="53" font-weight="700" letter-spacing="-1.8">Thoughtful interfaces.</text>
+<text x="55" y="237" fill="#f1f7fd" font-size="53" font-weight="700" letter-spacing="-1.8">Reliable workflows.</text>
+<text x="58" y="293" fill="#b8cbdc" font-size="19">Building software around real operational problems.</text>
+<text x="58" y="345" fill="#88a4b9" font-size="12" letter-spacing="2">REACT / TYPESCRIPT / CONNECTED SYSTEMS</text>
+</g>
+<g transform="translate(890 78)" fill="none">
+<path d="M15 55H125V170H235" stroke="#76b7bb" stroke-width="2" stroke-dasharray="5 7"/>
+<rect x="0" y="0" width="145" height="95" rx="16" fill="#17374a" stroke="#456c80"/>
+<rect x="20" y="21" width="62" height="8" rx="4" fill="#a0f1d1"/><path d="M20 48H124M20 65H92" stroke="#7597ad" stroke-width="5" stroke-linecap="round"/>
+<rect x="145" y="123" width="145" height="95" rx="16" fill="#17374a" stroke="#456c80"/>
+<path d="m165 171 12 12 23-28" stroke="#a0f1d1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M218 155H268M218 175H254" stroke="#7597ad" stroke-width="5" stroke-linecap="round"/>
+<circle cx="125" cy="120" r="7" fill="#a0f1d1"/>
+</g></svg>
