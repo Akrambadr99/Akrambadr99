@@ -1,106 +1,111 @@
 <p align="center">
-  <img src="assets/profile-banner.svg" alt="Akram Badr — Thoughtful interfaces. Reliable workflows." width="100%">
+  <img src="assets/profile-banner.svg" alt="Akram Badr — Python and TypeScript, AI code evaluation, debugging and test automation" width="100%">
 </p>
 
 <p align="center">
-  <strong>Hi, I'm Akram.</strong><br>
-  I build applications that connect people, operational data, and the decisions between them.
+  <strong>Python and TypeScript engineer · AI code review · Debugging · Test automation</strong>
 </p>
+
+I'm Akram, a software engineer with **3 years of hands-on software project experience**. My professional work includes **Python-based AI coding evaluation**: reproducible debugging tasks, reference patches, and automated test harnesses. I also build **TypeScript applications** with tests for asynchronous behavior, permissions, data integrity, and recovery.
 
 <p align="center">
   <a href="#selected-projects">Selected projects</a> ·
-  <a href="#how-i-approach-software">My approach</a> ·
-  <a href="#toolbox">Toolbox</a> ·
-  <a href="https://github.com/Akrambadr99?tab=repositories">All repositories</a>
+  <a href="#debugging-examples">Debugging examples</a> ·
+  <a href="#python-and-ai-code-evaluation">Python and AI evaluation</a> ·
+  <a href="#toolbox">Toolbox</a>
 </p>
-
-## What I work on
-
-My projects explore how complex workflows can become clear, usable software:
-from maintaining equipment and coordinating robot fleets to tracking delivery
-and making portfolio decisions. I work across React interfaces, TypeScript
-domain logic, and the data boundaries that connect them.
 
 ## Selected projects
 
-Four places to start, each highlighting a different engineering focus.
+Start with the implementation, then follow the tests that define its behavior.
 
-| Project | What it explores | Engineering focus |
+| Project | What I built | Debugging and test evidence |
 | --- | --- | --- |
-| **[MaintainOps](https://github.com/Akrambadr99/maintainops)** | Multi-site assets, maintenance, work orders, parts, and purchasing. | React + Express + SQLite; persisted workflows and operational evidence. |
-| **[Aegis Fleet Control](https://github.com/Akrambadr99/aegis-fleet-control)** | Robot fleets, missions, facility maps, traffic, and charging in a simulated environment. | Connected state transitions, resource coordination, and replay. |
-| **[Stratavera](https://github.com/Akrambadr99/AmberPath)** | Strategy execution across objectives, initiatives, budgets, risks, and reviews. | Portfolio context, decision evidence, and cross-domain consistency. |
-| **[Taskora](https://github.com/Akrambadr99/Taskora)** | Project planning, issue tracking, collaboration, and workflow visibility. | Accessible interactions, query coordination, and asynchronous UI behavior. |
+| **[MaintainOps](https://github.com/Akrambadr99/maintainops)** | React, Express, and SQLite workflows for assets, work orders, inventory, and purchasing. | [Login-throttling regression](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) · [Transaction rollback and restart recovery](https://github.com/Akrambadr99/maintainops/blob/main/tests/persistence.test.ts) |
+| **[FactoryOS](https://github.com/Akrambadr99/FactoryOS)** | A TypeScript/Node.js material-reservation service with SQLite persistence and atomic batch releases. | [Competing updates and fault-injected rollback](https://github.com/Akrambadr99/FactoryOS/blob/main/server/releaseBatchHttp.test.ts) · [Restart and migration integrity](https://github.com/Akrambadr99/FactoryOS/blob/main/server/sqliteReservationStore.test.ts) |
+| **[Taskora](https://github.com/Akrambadr99/Taskora)** | A React/TypeScript project workspace with an in-memory data layer, controlled network failures, and coordinated query state. | [Optimistic-update rollback](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/BoardPage.test.tsx) · [Conflicts, duplicate submissions, and draft recovery](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/IssueDetailPage.test.tsx) |
+| **[Aegis Fleet Control](https://github.com/Akrambadr99/aegis-fleet-control)** | A fleet simulation connecting missions, resource reservations, scoped commands, and versioned browser persistence. | [Storage failures and stale writes](https://github.com/Akrambadr99/aegis-fleet-control/blob/main/src/storage/PersistentStorageAdapter.test.ts) · [Asynchronous validation races](https://github.com/Akrambadr99/aegis-fleet-control/blob/main/src/features/missions/ValidationRace.test.tsx) |
+| **[Stratavera](https://github.com/Akrambadr99/AmberPath)** | Budget transfers and approval workflows with independent voting and immutable decision history. | [Approval-renewal regressions](https://github.com/Akrambadr99/AmberPath/blob/AmberPath/src/modules/approvals/renewal.test.ts) · [Persistence and evidence validation](https://github.com/Akrambadr99/AmberPath/blob/AmberPath/src/data/approval-renewal-persistence.test.ts) |
+| **[CareRoster](https://github.com/Akrambadr99/CareRoster)** | Staffing and credential workflows with dependent approvals and role-specific revalidation. | [Credential changes and approval consistency](https://github.com/Akrambadr99/CareRoster/blob/main/src/staffing/coverage-matrix/shiftLedger.test.ts) · [Saved-data validation](https://github.com/Akrambadr99/CareRoster/blob/main/src/workspace/storageValidation.test.ts) |
 
-*Stratavera is hosted in the `AmberPath` repository. Several projects share
-foundation code and history; each repository documents its current scope, setup, and limits.*
+*Stratavera is hosted in `AmberPath`. Several projects share foundation code and history. Each repository documents its current scope, setup, and implementation boundaries.*
 
-### A look inside
+## Debugging examples
 
-Real application captures using local fixture data. Open a project below to see its interface.
+**Login rate limiting — MaintainOps.** Successful sign-ins were consuming the shared-network failed-login allowance. The correction separates successful logins from failed attempts, with a regression test that checks both normal access and the throttling boundary. [Test](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) · [Documented correction](https://github.com/Akrambadr99/maintainops/blob/main/docs/product-expansion.md)
 
-<details open>
-<summary><strong>Aegis Fleet Control · connected robot operations</strong></summary>
+**Atomic recovery — FactoryOS.** A failure while recording a batch-release receipt must not leave partially changed reservations or audit events. SQLite fault-injection tests check rollback, while competing-revision and restart/retry cases exercise conflict handling and duplicate-request safety. [HTTP and transaction tests](https://github.com/Akrambadr99/FactoryOS/blob/main/server/releaseBatchHttp.test.ts)
 
-[Explore the repository →](https://github.com/Akrambadr99/aegis-fleet-control)
+**Asynchronous UI conflicts — Taskora.** Revision conflicts, permission changes, and network failures can arrive while a user is editing. Regression cases check optimistic rollback, preserved drafts, duplicate-submission handling, and keyboard/focus recovery. [Issue-detail tests](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/IssueDetailPage.test.tsx)
 
-![Aegis Fleet Control showing the operations desk, facility map, robot status, and dispatch context](assets/aegis.png)
+## Python and AI code evaluation
 
-</details>
+My professional evaluation work focuses on whether a proposed code change solves the requested problem and preserves surrounding behavior.
+
+- **Task and harness development:** Python/pytest, reproducible bug descriptions, reference diffs, and fail-to-pass/pass-to-pass contracts.
+- **Repository execution:** Git states, pinned dependencies, Docker environments, and repeatable test commands.
+- **Code review:** Correctness, test adequacy, edge cases, regressions, and clear technical reasons for accepting or rejecting a solution.
+- **Evaluation checks:** Oracle/null controls and behavioral tests that resist hardcoded outputs.
+
+For a public Python example, [car-speed-estimation](https://github.com/Akrambadr99/car-speed-estimation) explores YOLOv8 detection, OpenCV video processing, vehicle tracking, and directional line-crossing counts. It is an experimental computer-vision project; its speed labels are not calibrated measurements.
+
+## How I approach a bug fix
+
+1. Reproduce the failure and establish the expected behavior.
+2. Trace the relevant state, data, and authorization boundaries.
+3. Implement a focused change and add a regression test.
+4. Exercise failure paths and check that surrounding behavior still holds.
+5. Explain the result with code, tests, and reproducible evidence.
+
+## Toolbox
+
+| Area | Technologies |
+| --- | --- |
+| Primary languages | Python, TypeScript |
+| Python engineering | pytest, FastAPI, pandas, NumPy, automation scripts |
+| Application development | React, Node.js, Express, SQLite, JavaScript, CSS |
+| State and navigation | TanStack Query, React Router |
+| Testing | Vitest, Testing Library, Playwright, regression and integration tests |
+| Reproducible workflows | Git, GitHub Actions, Docker, npm, Vite, ESLint |
+
+## A look inside
+
+Application captures using local fixture data.
 
 <details>
 <summary><strong>MaintainOps · assets and maintenance execution</strong></summary>
 
-[Explore the repository →](https://github.com/Akrambadr99/maintainops)
+[Explore the repository](https://github.com/Akrambadr99/maintainops)
 
 ![MaintainOps showing the site overview, work-order metrics, and maintenance status](assets/maintainops.png)
 
 </details>
 
 <details>
-<summary><strong>Stratavera · strategy and portfolio decisions</strong></summary>
+<summary><strong>Aegis Fleet Control · simulated robot operations</strong></summary>
 
-[Explore the repository →](https://github.com/Akrambadr99/AmberPath)
+[Explore the repository](https://github.com/Akrambadr99/aegis-fleet-control)
 
-![Stratavera showing executive portfolio health, budget, risks, and the decision queue](assets/stratavera.png)
+![Aegis Fleet Control showing the operations desk, facility map, robot status, and dispatch context](assets/aegis.png)
 
 </details>
 
 <details>
-<summary><strong>Taskora · projects, issues, and team workflows</strong></summary>
+<summary><strong>Taskora · projects and team workflows</strong></summary>
 
-[Explore the repository →](https://github.com/Akrambadr99/Taskora)
+[Explore the repository](https://github.com/Akrambadr99/Taskora)
 
 ![Taskora dashboard showing project counts and issue priorities; the app retains its Atlas Ops branding](assets/taskora.png)
 
 </details>
 
-## How I approach software
+<details>
+<summary><strong>Stratavera · strategy and portfolio decisions</strong></summary>
 
-- **Start with the workflow.** Make ownership, state changes, and failure paths explicit.
-- **Keep boundaries clear.** Separate presentation, domain rules, and data access.
-- **Design for real interactions.** Consider keyboard use, loading, stale state, and recovery.
-- **Make behavior checkable.** Use unit, integration, and browser tests where they matter.
+[Explore the repository](https://github.com/Akrambadr99/AmberPath)
 
-## Toolbox
+![Stratavera showing executive portfolio health, budget, risks, and the decision queue](assets/stratavera.png)
 
-| Area | Technologies used in the featured projects |
-| --- | --- |
-| Interfaces | React, TypeScript, CSS, Vite |
-| Navigation & state | React Router, TanStack Query |
-| Services & persistence | Node.js, Express, SQLite |
-| Verification | Vitest, Testing Library, Playwright, ESLint |
-| Development | Git, GitHub, npm |
+</details>
 
-### Beyond web applications
-
-[Car speed estimation](https://github.com/Akrambadr99/car-speed-estimation) is a
-Python/OpenCV/YOLOv8 experiment in vehicle detection, tracking, and line-crossing
-counts. It is an exploration of computer vision, not a calibrated speed-measurement product.
-
----
-
-<p align="center">
-  <strong>Explore the work, then explore the details.</strong><br>
-  <a href="https://github.com/Akrambadr99?tab=repositories">Browse all repositories</a>
-</p>
+[Browse all repositories](https://github.com/Akrambadr99?tab=repositories)
