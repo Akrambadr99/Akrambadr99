@@ -1,19 +1,30 @@
 <p align="center">
-  <img src="assets/profile-banner.svg" alt="Akram Badr — Python and TypeScript, AI code evaluation, debugging and test automation" width="100%">
+  <img src="assets/profile-python-typescript.svg" alt="Akram Badr — Python and TypeScript, AI code evaluation, debugging and test automation" width="100%">
 </p>
 
 <p align="center">
-  <strong>Python and TypeScript engineer · AI code review · Debugging · Test automation</strong>
+  <strong>AI-generated code review · Python and TypeScript · Bug fixing and regression tests</strong>
 </p>
 
-I'm Akram, a software engineer with **3 years of hands-on software project experience**. My professional work includes **Python-based AI coding evaluation**: reproducible debugging tasks, reference patches, and automated test harnesses. I also build **TypeScript applications** with tests for asynchronous behavior, permissions, data integrity, and recovery.
+I'm Akram, a software engineer with **3 years of hands-on software project experience**. My work combines **professional Python-based AI coding evaluation** with **TypeScript application development**: reproducing bugs, reviewing proposed fixes, and checking behavior with automated tests.
 
 <p align="center">
+  <a href="#ai-code-review-and-test-engineering">AI code review</a> ·
   <a href="#selected-projects">Selected projects</a> ·
   <a href="#debugging-examples">Debugging examples</a> ·
-  <a href="#python-and-ai-code-evaluation">Python and AI evaluation</a> ·
   <a href="#toolbox">Toolbox</a>
 </p>
+
+## AI code review and test engineering
+
+My professional Python work focuses on evaluating whether AI-generated changes fix the reported problem and preserve existing behavior.
+
+- Reproduce repository bugs in Git-controlled, Docker-based environments.
+- Develop Python/pytest harnesses, reference patches, and fail-to-pass/pass-to-pass checks.
+- Review proposed fixes and tests for correctness, edge cases, and regression risk.
+- Write rubric-based assessments with clear technical reasoning and reproducible test evidence.
+
+**Public debugging example:** [MaintainOps login-throttling regression](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) checks that successful sign-ins do not consume the failed-login allowance.
 
 ## Selected projects
 
@@ -38,14 +49,7 @@ Start with the implementation, then follow the tests that define its behavior.
 
 **Asynchronous UI conflicts — Taskora.** Revision conflicts, permission changes, and network failures can arrive while a user is editing. Regression cases check optimistic rollback, preserved drafts, duplicate-submission handling, and keyboard/focus recovery. [Issue-detail tests](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/IssueDetailPage.test.tsx)
 
-## Python and AI code evaluation
-
-My professional evaluation work focuses on whether a proposed code change solves the requested problem and preserves surrounding behavior.
-
-- **Task and harness development:** Python/pytest, reproducible bug descriptions, reference diffs, and fail-to-pass/pass-to-pass contracts.
-- **Repository execution:** Git states, pinned dependencies, Docker environments, and repeatable test commands.
-- **Code review:** Correctness, test adequacy, edge cases, regressions, and clear technical reasons for accepting or rejecting a solution.
-- **Evaluation checks:** Oracle/null controls and behavioral tests that resist hardcoded outputs.
+## Additional Python work
 
 For a public Python example, [car-speed-estimation](https://github.com/Akrambadr99/car-speed-estimation) explores YOLOv8 detection, OpenCV video processing, vehicle tracking, and directional line-crossing counts. It is an experimental computer-vision project; its speed labels are not calibrated measurements.
 
