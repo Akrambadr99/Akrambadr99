@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="assets/profile-ai-code-review.svg" alt="Akram Badr - Python, JavaScript and TypeScript; AI code review, debugging and benchmark design" width="100%">
-</p>
+# Akram Badr
 
-<p align="center"><strong>Python · JavaScript · TypeScript<br>AI code review · Bug fixing · Benchmark design · Test automation</strong></p>
+**Python · JavaScript · TypeScript**  
+AI code review · Bug fixing · Benchmark design · Test automation
 
 I'm Akram, a software engineer with **3+ years of software development and testing experience**. I build features, review and correct AI-generated code, reproduce bugs, and design benchmarks and automated tests that check whether a solution actually works.
 
