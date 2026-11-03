@@ -1,76 +1,65 @@
 <p align="center">
-  <img src="assets/profile-python-typescript.svg" alt="Akram Badr — Python and TypeScript, AI code evaluation, debugging and test automation" width="100%">
+  <img src="assets/profile-ai-code-review.svg" alt="Akram Badr - Python, JavaScript and TypeScript; AI code review, debugging and benchmark design" width="100%">
 </p>
+
+<p align="center"><strong>Python · JavaScript · TypeScript<br>AI code review · Bug fixing · Benchmark design · Test automation</strong></p>
+
+I'm Akram, a software engineer with **3+ years of software development and testing experience**. I build features, review and correct AI-generated code, reproduce bugs, and design benchmarks and automated tests that check whether a solution actually works.
+
+My work spans **professional Python-based coding evaluation** and **JavaScript/TypeScript application engineering**. I have worked on programming and AI evaluation projects with AfterQuery, Turing AI, Outlier, and Alignerr.
 
 <p align="center">
-  <strong>AI-generated code review · Python and TypeScript · Bug fixing and regression tests</strong>
+  <a href="#ai-code-evaluation-and-benchmark-design">AI evaluation</a> ·
+  <a href="#selected-projects">Projects and tests</a> ·
+  <a href="#python-javascript-and-typescript">Languages</a> ·
+  <a href="#how-i-review-a-generated-fix">Review workflow</a>
 </p>
 
-I'm Akram, a software engineer with **3 years of hands-on software project experience**. My work combines **professional Python-based AI coding evaluation** with **TypeScript application development**: reproducing bugs, reviewing proposed fixes, and checking behavior with automated tests.
+## AI code evaluation and benchmark design
 
-<p align="center">
-  <a href="#ai-code-review-and-test-engineering">AI code review</a> ·
-  <a href="#selected-projects">Selected projects</a> ·
-  <a href="#debugging-examples">Debugging examples</a> ·
-  <a href="#toolbox">Toolbox</a>
-</p>
-
-## AI code review and test engineering
-
-My professional Python work focuses on evaluating whether AI-generated changes fix the reported problem and preserve existing behavior.
-
-- Reproduce repository bugs in Git-controlled, Docker-based environments.
-- Develop Python/pytest harnesses, reference patches, and fail-to-pass/pass-to-pass checks.
-- Review proposed fixes and tests for correctness, edge cases, and regression risk.
-- Write rubric-based assessments with clear technical reasoning and reproducible test evidence.
-
-**Public debugging example:** [MaintainOps login-throttling regression](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) checks that successful sign-ins do not consume the failed-login allowance.
+- **Find and reproduce bugs:** turn an observed failure into a clear issue, expected behavior, and repeatable test case.
+- **Review and correct generated code:** inspect logic, state transitions, authorization, error handling, and the effects of a proposed patch.
+- **Design coding benchmarks:** define task requirements, reference fixes, failure cases, and behavioral checks that accept valid implementations.
+- **Build automated tests:** use Python/pytest and TypeScript test suites for regression, integration, browser, and failure-path coverage.
+- **Evaluate fixes:** check correctness, test adequacy, and regressions; explain defects and results with technical evidence.
+- **Make evaluation reproducible:** use Git revisions, pinned dependencies, Docker environments, and fail-to-pass/pass-to-pass checks in my Python benchmark work.
 
 ## Selected projects
 
-Start with the implementation, then follow the tests that define its behavior.
+I use these repositories to test AI-generated code, identify and correct errors, and design debugging benchmarks. The links show the implementation and the concrete behaviors I test.
 
-| Project | What I built | Debugging and test evidence |
+| Project | My code review and correction work | Benchmark and test evidence |
 | --- | --- | --- |
-| **[MaintainOps](https://github.com/Akrambadr99/maintainops)** | React, Express, and SQLite workflows for assets, work orders, inventory, and purchasing. | [Login-throttling regression](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) · [Transaction rollback and restart recovery](https://github.com/Akrambadr99/maintainops/blob/main/tests/persistence.test.ts) |
-| **[FactoryOS](https://github.com/Akrambadr99/FactoryOS)** | A TypeScript/Node.js material-reservation service with SQLite persistence and atomic batch releases. | [Competing updates and fault-injected rollback](https://github.com/Akrambadr99/FactoryOS/blob/main/server/releaseBatchHttp.test.ts) · [Restart and migration integrity](https://github.com/Akrambadr99/FactoryOS/blob/main/server/sqliteReservationStore.test.ts) |
-| **[Taskora](https://github.com/Akrambadr99/Taskora)** | A React/TypeScript project workspace with an in-memory data layer, controlled network failures, and coordinated query state. | [Optimistic-update rollback](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/BoardPage.test.tsx) · [Conflicts, duplicate submissions, and draft recovery](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/IssueDetailPage.test.tsx) |
-| **[Aegis Fleet Control](https://github.com/Akrambadr99/aegis-fleet-control)** | A fleet simulation connecting missions, resource reservations, scoped commands, and versioned browser persistence. | [Storage failures and stale writes](https://github.com/Akrambadr99/aegis-fleet-control/blob/main/src/storage/PersistentStorageAdapter.test.ts) · [Asynchronous validation races](https://github.com/Akrambadr99/aegis-fleet-control/blob/main/src/features/missions/ValidationRace.test.tsx) |
-| **[Stratavera](https://github.com/Akrambadr99/AmberPath)** | Budget transfers and approval workflows with independent voting and immutable decision history. | [Approval-renewal regressions](https://github.com/Akrambadr99/AmberPath/blob/AmberPath/src/modules/approvals/renewal.test.ts) · [Persistence and evidence validation](https://github.com/Akrambadr99/AmberPath/blob/AmberPath/src/data/approval-renewal-persistence.test.ts) |
-| **[CareRoster](https://github.com/Akrambadr99/CareRoster)** | Staffing and credential workflows with dependent approvals and role-specific revalidation. | [Credential changes and approval consistency](https://github.com/Akrambadr99/CareRoster/blob/main/src/staffing/coverage-matrix/shiftLedger.test.ts) · [Saved-data validation](https://github.com/Akrambadr99/CareRoster/blob/main/src/workspace/storageValidation.test.ts) |
+| **[MaintainOps](https://github.com/Akrambadr99/maintainops)** | Corrected authentication and workflow behavior, including successful sign-ins consuming the failed-login allowance. | [Login throttling](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) · [Atomic rollback and restart recovery](https://github.com/Akrambadr99/maintainops/blob/main/tests/persistence.test.ts) |
+| **[FactoryOS](https://github.com/Akrambadr99/FactoryOS)** | Reviewed and corrected reservation and batch-release logic for atomicity, revision conflicts, and duplicate requests. | [SQLite fault injection and batch release](https://github.com/Akrambadr99/FactoryOS/blob/main/server/releaseBatchHttp.test.ts) · [Recovery and migrations](https://github.com/Akrambadr99/FactoryOS/blob/main/server/sqliteReservationStore.test.ts) |
+| **[Taskora](https://github.com/Akrambadr99/Taskora)** | Reviewed React/TypeScript changes and corrected optimistic-update failures, revision conflicts, and duplicate submissions. | [Board rollback](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/BoardPage.test.tsx) · [Drafts, permissions and interaction recovery](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/IssueDetailPage.test.tsx) |
+| **[Aegis Fleet Control](https://github.com/Akrambadr99/aegis-fleet-control)** | Evaluated and corrected fleet-simulation state, mission reservations, asynchronous validation, and stale writes. | [Storage, migration and recovery](https://github.com/Akrambadr99/aegis-fleet-control/blob/main/src/storage/PersistentStorageAdapter.test.ts) · [Validation races](https://github.com/Akrambadr99/aegis-fleet-control/blob/main/src/features/missions/ValidationRace.test.tsx) |
+| **[Stratavera](https://github.com/Akrambadr99/AmberPath)** | Reviewed and corrected budget-transfer and approval logic for voting independence, permissions, and decision history. | [Approval renewals](https://github.com/Akrambadr99/AmberPath/blob/AmberPath/src/modules/approvals/renewal.test.ts) · [Funding-transfer integrity](https://github.com/Akrambadr99/AmberPath/blob/AmberPath/src/modules/funding-transfer/service.test.ts) |
+| **[CareRoster](https://github.com/Akrambadr99/CareRoster)** | Reviewed and corrected staffing and credential logic, including stale approvals and required revalidation. | [Shift ledger and approval consistency](https://github.com/Akrambadr99/CareRoster/blob/main/src/staffing/coverage-matrix/shiftLedger.test.ts) · [Recovery behavior](https://github.com/Akrambadr99/CareRoster/blob/main/src/workspace/WorkflowRecovery.test.tsx) |
+| **[LedgerSpring](https://github.com/Akrambadr99/CoralPoint)** | Reviewed and corrected reconciliation logic for duplicate statements, independent approval, and atomic adjustments. | [Reconciliation contracts](https://github.com/Akrambadr99/CoralPoint/blob/CoralPoint/src/reconciliation-control/reconciliation-control.test.ts) · [Archive recovery and evidence integrity](https://github.com/Akrambadr99/CoralPoint/blob/CoralPoint/src/period-governance/reporting-archive.test.ts) |
 
-*Stratavera is hosted in `AmberPath`. Several projects share foundation code and history. Each repository documents its current scope, setup, and implementation boundaries.*
+*Stratavera is hosted in `AmberPath`; LedgerSpring is hosted in `CoralPoint`. Several projects share foundation code and history. Their READMEs describe setup, test commands, and implementation scope.*
 
-## Debugging examples
+## Python, JavaScript and TypeScript
 
-**Login rate limiting — MaintainOps.** Successful sign-ins were consuming the shared-network failed-login allowance. The correction separates successful logins from failed attempts, with a regression test that checks both normal access and the throttling boundary. [Test](https://github.com/Akrambadr99/maintainops/blob/main/tests/login-limits.test.ts) · [Documented correction](https://github.com/Akrambadr99/maintainops/blob/main/docs/product-expansion.md)
-
-**Atomic recovery — FactoryOS.** A failure while recording a batch-release receipt must not leave partially changed reservations or audit events. SQLite fault-injection tests check rollback, while competing-revision and restart/retry cases exercise conflict handling and duplicate-request safety. [HTTP and transaction tests](https://github.com/Akrambadr99/FactoryOS/blob/main/server/releaseBatchHttp.test.ts)
-
-**Asynchronous UI conflicts — Taskora.** Revision conflicts, permission changes, and network failures can arrive while a user is editing. Regression cases check optimistic rollback, preserved drafts, duplicate-submission handling, and keyboard/focus recovery. [Issue-detail tests](https://github.com/Akrambadr99/Taskora/blob/main/src/app/pages/IssueDetailPage.test.tsx)
-
-## Additional Python work
-
-For a public Python example, [car-speed-estimation](https://github.com/Akrambadr99/car-speed-estimation) explores YOLOv8 detection, OpenCV video processing, vehicle tracking, and directional line-crossing counts. It is an experimental computer-vision project; its speed labels are not calibrated measurements.
-
-## How I approach a bug fix
-
-1. Reproduce the failure and establish the expected behavior.
-2. Trace the relevant state, data, and authorization boundaries.
-3. Implement a focused change and add a regression test.
-4. Exercise failure paths and check that surrounding behavior still holds.
-5. Explain the result with code, tests, and reproducible evidence.
-
-## Toolbox
-
-| Area | Technologies |
+| Area | Experience and tools |
 | --- | --- |
-| Primary languages | Python, TypeScript |
-| Python engineering | pytest, FastAPI, pandas, NumPy, automation scripts |
-| Application development | React, Node.js, Express, SQLite, JavaScript, CSS |
-| State and navigation | TanStack Query, React Router |
-| Testing | Vitest, Testing Library, Playwright, regression and integration tests |
-| Reproducible workflows | Git, GitHub Actions, Docker, npm, Vite, ESLint |
+| **Python** | Coding-evaluation harnesses, reference patches, automation and data processing; pytest, FastAPI, pandas and NumPy. |
+| **JavaScript / TypeScript** | Feature development, code review and debugging across React, Node.js, Express, SQLite, typed gateways and browser state. |
+| **Testing and benchmarks** | Vitest, Testing Library, Playwright, pytest; regression cases, fault injection, concurrency, authorization and recovery checks. |
+| **Development workflow** | Git, GitHub Actions, Docker, npm, Vite and ESLint; reproducible environments and reviewable changes. |
+
+My independent Python work also includes **Netpulse / Pulseflow**, a network-monitoring tool with Docker packaging and automated tests used to review and correct AI-generated implementations.
+
+For a public Python example, [car-speed-estimation](https://github.com/Akrambadr99/car-speed-estimation) explores YOLOv8 detection, OpenCV video processing, vehicle tracking, and line-crossing counts. It is an experimental computer-vision project; its speed labels are not calibrated measurements.
+
+## How I review a generated fix
+
+1. Reproduce the bug and define the expected behavior.
+2. Inspect the generated patch and trace the affected code paths.
+3. Correct logic errors and add a regression that exposes the original failure.
+4. Check boundary conditions, failure paths, and related behavior.
+5. Assess the solution against the task requirements and explain the outcome with code and test evidence.
 
 ## A look inside
 
